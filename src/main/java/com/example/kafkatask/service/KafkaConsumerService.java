@@ -13,7 +13,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import static com.example.kafkatask.constant.KafkaConstants.TOPIC_1;
-import static com.example.kafkatask.constant.KafkaConstants.TOPIC_2;
 
 @Log4j2
 @Component
@@ -37,19 +36,16 @@ public class KafkaConsumerService {
     @KafkaListener(topics = TOPIC_1, groupId = "log-processor-group")
     public void processStreamLogs(ConsumerRecord<String, String> record) throws Exception {
         LinkedHashMap<String, Object> request = mapper.readValue(record.value(), LinkedHashMap.class);
-        long kafkaThread = Thread.currentThread().getId();
-        log.info(" Kafka Thread # " + kafkaThread + " is doing this task");
         executor.submit(() -> {
             try {
-                Boolean isProcessing= logService.processLog(request);
-                if (isProcessing.equals(true)){
-                    Map<String, Object> maskedLogs= logService.logsMasking(request);
-                    logService.logProcessing(maskedLogs);
+                Boolean isProcessing = logService.processLog(request);
+                if (isProcessing.equals(true)) {
+                    Map<String, Object> finalData = logService.logsMasking(request);
+                    logService.logProcessing(finalData);
                     if ("Y".equals(request.get("isMonitoring"))) {
-                        logService.monitorLogs(maskedLogs);
+                        logService.monitorLogs(finalData);
                     }
                 }
-
             } catch (Exception e) {
                 log.error("Error while processing logs message {}", e);
             }

@@ -8,23 +8,56 @@ public class LogsConstants {
     }
 
     /**
-     * The constant ALARM_PROCESS_TOPIC.
+     * The constant ORGANIZATION_ID
+     */
+    public static final String ORG_ID = "orgId";
+    /**
+     * The constant APPLICATION_ID.
      */
     public static final String APP_ID = "appId";
     /**
-     * The constant ALARM_PROCESS_TOPIC.
+     * The constant LOG_TYPE.
      */
-    public static final String SERVICE_NAME = "serviceName";
+    public static final String LOG_TYPE = "logType";
     /**
-     * The constant ALARM_PROCESS_TOPIC.
+     * The constant SYSTEM_NAME.
      */
     public static final String SYSTEM_NAME = "systemName";
     /**
-     * The constant ALARM_PROCESS_TOPIC.
+     * The constant SERVICE_NAME
+     */
+    public static final String SERVICE_NAME = "serviceName";
+    /**
+     * The constant LOG_LEVEL.
+     */
+    public static final String LOG_LEVEL = "logLevel";
+    /**
+     * The constant LOG_TARGET.
+     */
+    public static final String LOG_TARGET = "logTarget";
+    /**
+     * The constant IS_MASKING.
+     */
+    public static final String IS_MASKING = "isMasking";
+    /**
+     * The constant MASKING.
+     */
+    public static final String MASKING = "masking";
+    /**
+     * The constant IS_MONITORING.
+     */
+    public static final String IS_MONITORING = "isMonitoring";
+    /**
+     * The constant MONITORING_RULES.
+     */
+    public static final String MONITORING_RULES = "monitoringRules";
+    /**
+     * The constant STATUS.
      */
     public static final String STATUS = "status";
     /**
-     * The constant ALARM_PROCESS_TOPIC.
+     * The constant LOG_DATA.
      */
-    public static final String IS_ERROR = "isError";
+    public static final String LOG_DATA = "logData";
+
 }

@@ -1,21 +1,13 @@
-package com.example.kafkatask.entity;
+package com.example.kafkatask.dto;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "logs")
-public class Logs {
-    @Id
+public class InfoDTO {
+
     private String orgId;
-    @Id
     private String appId;
-    @Id
     private String logType;
-    @Id
     private String systemName;
-    @Id
     private String serviceName;
 
     private String logLevel;

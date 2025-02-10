@@ -1,10 +1,7 @@
 package com.example.kafkatask.controller;
 
 import com.example.kafkatask.business.LogServiceProcessing;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -21,8 +18,8 @@ public class LogsController {
     }
 
     @PostMapping("/publish")
-    public void sendMessage(@RequestParam Map<String, Object> logs) {
-        logService.SendLogs(TOPIC_1, logs);
+    public void sendMessage(@RequestBody Map<String, Object> logs) {
+        logService.sendLogs(TOPIC_1, logs);
     }
 }
 
