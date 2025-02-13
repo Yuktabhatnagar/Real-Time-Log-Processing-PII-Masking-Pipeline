@@ -20,6 +20,50 @@ public class LogsConstants {
      */
     public static final String LOG_TYPE = "logType";
     /**
+     * The constant LOG_TYPE.
+     */
+    public static final String PAYLOAD_TYPE = "payloadType";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String HEADERS = "headers";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String TRACE_ID = "traceId";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String LOGIN_ID = "loginId";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String STATUS_CODE = "statusCode";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String HTTP_METHOD = "httpMethod";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String URL = "url";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String PAYLOAD = "payload";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String PURGE_DAYS = "purgeDays";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String ERROR_DETAILS = "errorDetails";
+    /**
+     * The constant LOG_TYPE.
+     */
+    public static final String MODULE_ID = "moduleId";/**
+    /**
      * The constant SYSTEM_NAME.
      */
     public static final String SYSTEM_NAME = "systemName";

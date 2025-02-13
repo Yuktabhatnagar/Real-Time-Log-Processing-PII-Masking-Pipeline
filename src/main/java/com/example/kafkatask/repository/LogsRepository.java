@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Map;
+
 @Repository
 public interface LogsRepository extends JpaRepository<LogEntity, Long> {
 
@@ -14,7 +16,7 @@ public interface LogsRepository extends JpaRepository<LogEntity, Long> {
             FROM log_data
             WHERE org_id = :orgId
               AND app_id = :appId
-              AND payload_type = :logType
+              AND log_type = :logType
               AND system_name = :systemName
               AND service_name = :serviceName
             """, nativeQuery = true)
@@ -23,5 +25,22 @@ public interface LogsRepository extends JpaRepository<LogEntity, Long> {
                        @Param("logType") String logType,
                        @Param("systemName") String systemName,
                        @Param("serviceName") String serviceName);
+
+    @Query(value = """
+            SELECT is_masking, is_monitoring, log_level, log_target, masking, monitoring_rule,  system_name
+            FROM public.logs
+            WHERE org_id = :orgId
+              AND app_id = :appId
+              AND log_type = :logType
+              AND system_name = :systemName
+              AND service_name = :serviceName
+            """, nativeQuery = true)
+    Map<String, Object> fetchLogConfiguration(@Param("orgId") String orgId,
+                                              @Param("appId") String appId,
+                                              @Param("logType") String logType,
+                                              @Param("systemName") String systemName,
+                                              @Param("serviceName") String serviceName);
+
+
 
 }

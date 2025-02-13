@@ -38,12 +38,13 @@ public class KafkaConsumerService {
         LinkedHashMap<String, Object> request = mapper.readValue(record.value(), LinkedHashMap.class);
         executor.submit(() -> {
             try {
-                Boolean isProcessing = logService.processLog(request);
+                Map<String, Object> logConfigs= logService.IsExistDB(request);
+                Boolean isProcessing = logService.processLog(request, logConfigs);
                 if (isProcessing.equals(true)) {
-                    Map<String, Object> finalData = logService.logsMasking(request);
-                    logService.logProcessing(finalData);
-                    if ("Y".equals(request.get("isMonitoring"))) {
-                        logService.monitorLogs(finalData);
+                    Map<String, Object> finalData = logService.logsMasking(request, logConfigs);
+                    logService.logProcessing(finalData, logConfigs);
+                    if ("Y".equals(logConfigs.get("isMonitoring"))) {
+                        logService.monitorLogs(finalData, logConfigs.get("monitoringRules"));
                     }
                 }
             } catch (Exception e) {
