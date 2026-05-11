@@ -1,0 +1,14 @@
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/KafkaTaskApplication.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/business/LogServiceProcessing.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/config/KafkaConsumerConfig.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/config/KafkaProducerConfig.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/constant/KafkaConstants.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/constant/LogsConstants.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/controller/LogsController.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/dto/InfoDTO.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/dto/KafkaLogs.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/entity/Logs.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/package-info.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/repository/LogsRepository.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/service/KafkaConsumerService.java
+/home/decimal/Project/kafka-task/src/main/java/com/example/kafkatask/service/KafkaProducerService.java
